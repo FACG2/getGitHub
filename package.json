@@ -1,0 +1,27 @@
+{
+  "name": "getGitHub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node src/server.js",
+    "server":"nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACG2/getGitHub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACG2/getGitHub/issues"
+  },
+  "homepage": "https://github.com/FACG2/getGitHub#readme",
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "shot": "^3.4.2",
+    "tape": "^4.8.0"
+  }
+}

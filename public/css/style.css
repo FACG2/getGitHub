@@ -1,0 +1,15 @@
+/*
+Main color: #000;
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+.container{
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.mainColor{
+  color: #000;
+}
