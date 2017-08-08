@@ -7,3 +7,10 @@ dasd
 repos : [ {repo1} , {repo2}] max 6 repos
 }
 */
+const request = require('request');
+
+function apiReq(username){
+
+}
+
+module.exports = apiReq;
