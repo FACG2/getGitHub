@@ -6,8 +6,8 @@ function dom() {
 
 }
 
-// Generate repors html as string
-function myRepos(obj) {
+// Generate repos html as string
+function myRepos(reposArray) {
   //return string with html needed to display repos
 
 }
