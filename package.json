@@ -6,7 +6,8 @@
   "scripts": {
     "test": "node src/test.js",
     "start": "node src/server.js",
-    "server": "nodemon src/server.js"
+    "server": "nodemon src/server.js",
+    "coverage": "node ./node_modules/.bin/istanbul cover public/test.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/FACG2/getGitHub#readme",
   "devDependencies": {
+    "istanbul": "^0.4.5",
     "nodemon": "^1.11.0",
     "shot": "^3.4.2",
     "tape": "^4.8.0"
