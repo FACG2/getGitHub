@@ -4,7 +4,8 @@ const env = require('env2')('.env');
 function apiReq(username, cb){
   let obj = {};
   let arr = [];
-  let path = 'https://api.github.com/users/' + username + '?access_token='+process.env.TOKEN;
+  let path = 'https://api.github.com/users/' + username ;
+  //console.log('https://api.github.com/users/' + username + '?access_token='+process.env.TOKEN);
   request({url: path , headers: {'user-agent': 'node.js'}}, (err, response , body) => {
     if(err) cb(err, {});
     else {

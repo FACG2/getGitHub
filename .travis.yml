@@ -3,4 +3,7 @@ language: node_js
 node_js:
 - "stable"
 script:
-  - node test/*
+  - node test/front-end-test.js
+  - node test/back-end-test.js
+env:
+  - TOKEN=412348569e8e3508a2f095568b0200c0e6ba2a7c

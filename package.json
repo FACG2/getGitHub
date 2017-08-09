@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node test/back-end-test.js",
+    "test": "node src/test.js",
     "start": "node src/server.js",
     "server": "nodemon src/server.js",
     "coverage": "node ./node_modules/.bin/istanbul cover test/*"
