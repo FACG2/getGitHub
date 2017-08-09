@@ -26,6 +26,9 @@ nav form{
 nav input{
   height: 36px;
   box-sizing: border-box;
+  border-radius: 26px;
+  border: 1px solid gray;
+  padding: 0 14px;
 }
 .main{
   display: flex;
