@@ -3,5 +3,4 @@ language: node_js
 node_js:
 - "stable"
 script:
-  - node src/test.js
-  - node public/test.js
+  - node test/*
