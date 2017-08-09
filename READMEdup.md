@@ -31,6 +31,6 @@ The user writes the name of the developer in search input box, then click search
 5. Right click on ```index.html``` and open using ```Chrome```.
 6. To run server.js install dependencies using ```>npm init``` .
 7. ```>node server.js```
-8. open the ```localhost:3500``` in Chrome Browser to run the project.
+8. open the ```localport:3500``` in Chrome Browser to run the project.
 
-### Visit the site [Here](https://getgitgub.herokuapp.com/)
+### Visit the site [Here](www.)

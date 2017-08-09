@@ -4,10 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "server": "nodemon src/server.js"
+=======
     "test": "node src/test.js",
     "start": "node src/server.js",
     "server": "nodemon src/server.js",
     "coverage": "node ./node_modules/.bin/istanbul cover test/*"
+>>>>>>> d166bc84caca9b511535057b984b9130e9cc2a92
   },
   "repository": {
     "type": "git",
