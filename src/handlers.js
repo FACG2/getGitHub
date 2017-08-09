@@ -9,55 +9,28 @@ const contentTypes = {
 }
 
 function handleSearch(req, res){
-  console.log(req.url);
   let content = '';
-  let out = {};
-  if (req.username) {
-    content = req.username;
+  req.on('data' , (chunk) => {
+    content += chunk;
+  });
+  req.on('end' , () => {
     requests.apiReq(content, (err , obj) => {
       if(err){
         console.log(err, 'Error');
-        res.writeHead(302 , {'Location': '/'});
-        res.end();
+        res.writeHead(404 , )
       }
       else {
         requests.getRepos(content , (error , repos) => {
           if(error){
             console.log(error);
-            res.writeHead(302 , {'Location': '/'});
-            res.end();
           }else {
-              obj.repos = repos;
-              // res.writeHead(302 , {'Location': '/'});
-              res.end(JSON.stringify(obj));
+            obj.repos = repos;
+            res.end(JSON.stringify(obj));
           }
         });
       }
     });
-  }else{
-    req.on('data' , (chunk) => {
-      content += chunk;
-    });
-    req.on('end' , () => {
-        requests.apiReq(content, (err , obj) => {
-          if(err){
-            console.log(err, 'Error');
-            res.writeHead(404 , )
-          }
-          else {
-            requests.getRepos(content , (error , repos) => {
-              if(error){
-                console.log(error);
-              }else {
-                obj.repos = repos;
-                //res.writeHead(302 , {'Location': '/'});
-                res.end(JSON.stringify(obj));
-              }
-            });
-          }
-        });
-      });
-    }
+  });
 }
 
 function handleNotFound(req, res){
