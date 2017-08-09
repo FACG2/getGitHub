@@ -1,5 +1,5 @@
 const fs = require('fs');
-const apiReq = require('./apiReq');
+const requests = require('./apiReq.js');
 
 const contentTypes = {
   css: 'text/css',
@@ -21,19 +21,31 @@ function handleHome(req, res){
 
 function handleSearch(req, res){
     let content = '';
-
+    let out = {};
     req.on('data' , (chunk) => {
       content += chunk;
     });
 
     req.on('end' , () => {
-      // let word = content.split('=')[1];
-      // apiReq(word);
-      console.log(content);
+      let username = content.split('=')[1];
+      let arr = [];
+        requests.apiReq(username, (err , obj) => {
+          if(err){
+            console.log(err, 'Error');
+          }
+          else {
+            requests.getRepos(username , (error , repos) => {
+              if(error){
+                console.log(error);
+              }else {
+                obj.repos = repos;
+                res.writeHead(302 , {'Location': '/'});
+                res.end(JSON.stringify(obj));
+              }
+            });
+          }
+      });
     });
-
-    res.writeHead(302 , {'Location': '/'});
-    res.end();
 }
 
 function handleNotFound(req, res){
