@@ -33,4 +33,4 @@ The user writes the name of the developer in search input box, then click search
 7. ```>node server.js```
 8. open the ```localport:3500``` in Chrome Browser to run the project.
 
-### Visit the site [Here](www.)
+### Visit the site [Here](https://getgitgub.herokuapp.com/)
