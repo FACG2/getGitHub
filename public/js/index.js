@@ -3,7 +3,7 @@
 })();
 
 function dom() {
-  if (typeof document != 'undefined') {
+  // if (typeof document != 'undefined') {
     var searchForm = document.getElementById('searchForm');
     if (searchForm) {
       searchForm.addEventListener('submit', function(event){
@@ -21,7 +21,7 @@ function dom() {
         });
   	  });
     }
-  }
+  // }
 }
 
 // Generate repos html as string
@@ -52,6 +52,6 @@ function apiReq(userName , callback) {
 }
 
 
-if (typeof module != 'undefined' ) {
+// if (typeof module != 'undefined' ) {
   module.exports = myRepos;
-}
+// }
