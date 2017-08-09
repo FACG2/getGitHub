@@ -4,9 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server.js",
     "server": "nodemon src/server.js"
+=======
+    "test": "node src/test.js",
+    "start": "node src/server.js",
+    "server": "nodemon src/server.js",
+    "coverage": "node ./node_modules/.bin/istanbul cover test/*"
+>>>>>>> d166bc84caca9b511535057b984b9130e9cc2a92
   },
   "repository": {
     "type": "git",
@@ -20,8 +27,13 @@
   },
   "homepage": "https://github.com/FACG2/getGitHub#readme",
   "devDependencies": {
+    "istanbul": "^0.4.5",
     "nodemon": "^1.11.0",
     "shot": "^3.4.2",
     "tape": "^4.8.0"
+  },
+  "dependencies": {
+    "env2": "^2.2.0",
+    "request": "^2.81.0"
   }
 }

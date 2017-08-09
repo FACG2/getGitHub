@@ -4,12 +4,97 @@ Main color: #000;
 * {
   margin: 0;
   padding: 0;
+  font-family: Helvetica;
+  outline: none;
 }
 .container{
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
 }
 .mainColor{
   color: #000;
+}
+nav{
+  background: #24292e;
+  padding: 16px 0;
+  color: white;
+}
+nav form{
+  margin: 0 auto;
+  display: table;
+}
+nav input{
+  height: 36px;
+  box-sizing: border-box;
+  border-radius: 26px;
+  border: 1px solid gray;
+  padding: 0 14px;
+}
+.main{
+  display: flex;
+  margin-top:24px;
+}
+/*main Aside*/
+.main>aside{
+  width: 24%;
+  margin-right: 1%;
+}
+
+aside img{
+  max-width: 100%;
+  border-radius: 5px;
+}
+/*Repos*/
+.repos{
+  width: 75%;
+}
+.status{
+  display: flex;
+  justify-content: space-around;
+}
+.repoData{
+  padding:5px;
+  width: 48%;
+  margin:  8px 1%;
+  border:1px solid #c6c2c2;
+  border-radius: 5px;
+  padding:10px;
+  box-sizing: border-box;
+}
+.listRepos{
+  display: flex;
+  flex-wrap: wrap;
+}
+.listRepos .repoName{
+  text-decoration: none;
+  font-weight: 600;
+  color: #0366d6;
+}
+.listRepos p{
+  padding:10px 0;
+  font-size:12px;
+  color: #586069;
+}
+.status span{
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 20px;
+  padding: 1px 5px;
+}
+.names{
+  margin-bottom: 10px;
+}
+.address p{
+  margin-bottom:5px;
+}
+.names h6{
+  color: #586069;
+  font-size:14px;
+}
+.repoLang{
+  color: #c0ac00 !important;
+  font-weight: 600;
+}
+.repoLang span{
+  color: #586069 !important;
 }
