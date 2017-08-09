@@ -10,6 +10,10 @@ function apiReq(username, cb){
     if(err) cb(err, {});
     else {
       let data = JSON.parse(body);
+      if(data.message){
+        cb('Error' , null)
+        return;
+      }
       obj.name = data.name;
       obj.login = data.login;
       obj.avatar_url = data.avatar_url;
@@ -29,6 +33,7 @@ function getRepos(username , cb){
     else {
       let data = JSON.parse(body);
       let counter = 0;
+      // console.log(data);
       if(data.length <= 12) counter = data.length;
       else counter = 12;
       let arr = [];
