@@ -1,5 +1,5 @@
 const request = require('request');
-//const env = require('env2')('.env');
+const env = require('env2')('.env');
 
 function apiReq(username, cb){
   let obj = {};

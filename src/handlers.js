@@ -17,7 +17,7 @@ function handleSearch(req, res){
     requests.apiReq(content, (err , obj) => {
       if(err){
         console.log(err, 'Error');
-        res.writeHead(404 , )
+        res.writeHead(404)
       }
       else {
         requests.getRepos(content , (error , repos) => {
