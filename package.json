@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node test/back-end-test.js",
+    "test": "node src/test.js",
     "start": "node src/server.js",
     "server": "nodemon src/server.js",
     "coverage": "node ./node_modules/.bin/istanbul cover test/*"
@@ -20,13 +20,11 @@
     "url": "https://github.com/FACG2/getGitHub/issues"
   },
   "homepage": "https://github.com/FACG2/getGitHub#readme",
-  "devDependencies": {
+  "dependencies": {
     "istanbul": "^0.4.5",
     "nodemon": "^1.11.0",
     "shot": "^3.4.2",
-    "tape": "^4.8.0"
-  },
-  "dependencies": {
+    "tape": "^4.8.0",
     "env2": "^2.2.0",
     "request": "^2.81.0"
   }
