@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node src/test.js",
     "start": "node src/server.js",
     "server": "nodemon src/server.js"
   },
@@ -20,11 +20,13 @@
   },
   "homepage": "https://github.com/FACG2/getGitHub#readme",
   "devDependencies": {
+    "envs": "^0.1.6",
     "nodemon": "^1.11.0",
     "shot": "^3.4.2",
     "tape": "^4.8.0"
   },
   "dependencies": {
+    "env2": "^2.2.0",
     "request": "^2.81.0"
   }
 }
