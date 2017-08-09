@@ -1,5 +1,5 @@
 (()=>{
-   dom();
+  dom();
 })();
 
 function dom() {
@@ -16,7 +16,7 @@ function dom() {
         document.querySelector('#location').textContent = data.location;
         document.querySelector('#followersNumber span').textContent = data.followers;
         document.querySelector('#followingNumber span').textContent = data.following;
-        document.querySelector('.listRepos').innerHTML=myRepos(data.repos);
+        document.querySelector('.listRepos').innerHTML = myRepos(data.repos);
       });
 	  }
   }
@@ -36,7 +36,6 @@ function myRepos(reposArray) {
     return result;
   }
 
-
 //Return object of only the data needed in dom
 function apiReq(userName , callback) {
   var xhr = new XMLHttpRequest();
@@ -46,6 +45,6 @@ function apiReq(userName , callback) {
       callback(data);
     }
   }
-  xhr.open('POST',"/search");
+  xhr.open('POST',"/search" , true);
   xhr.send(userName);
 }
