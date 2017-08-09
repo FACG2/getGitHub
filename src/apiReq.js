@@ -10,6 +10,10 @@ function apiReq(username, cb){
     if(err) cb(err, {});
     else {
       let data = JSON.parse(body);
+      if(data.message){
+        cb('Error' , null)
+        return;
+      }
       obj.name = data.name;
       obj.login = data.login;
       obj.avatar_url = data.avatar_url;

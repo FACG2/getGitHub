@@ -15,14 +15,18 @@ function handleSearch(req, res){
   });
   req.on('end' , () => {
     requests.apiReq(content, (err , obj) => {
+      // console.log('err' , err);
+      // console.log('obj' , obj);
       if(err){
-        console.log(err, 'Error');
-        res.writeHead(404)
-      }
-      else {
+        console.log(err, 'ssssError');
+        res.writeHead(302 , {'Location': '/404'});
+        res.end();
+      } else {
         requests.getRepos(content , (error , repos) => {
           if(error){
             console.log(error);
+            res.writeHead(302 , {'Location': '/404'});
+            res.end();
           }else {
             obj.repos = repos;
             res.end(JSON.stringify(obj));
