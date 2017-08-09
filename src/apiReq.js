@@ -1,5 +1,5 @@
 const request = require('request');
-const env = require('env2')('.env');
+//const env = require('env2')('.env');
 
 function apiReq(username, cb){
   let obj = {};
@@ -9,11 +9,6 @@ function apiReq(username, cb){
     if(err) cb(err, {});
     else {
       let data = JSON.parse(body);
-      if(data.hasOwnProperty('message')){
-        if(data.message === 'Not Found')
-          cb('error' , null);
-          return;
-      }
       obj.name = data.name;
       obj.login = data.login;
       obj.avatar_url = data.avatar_url;
