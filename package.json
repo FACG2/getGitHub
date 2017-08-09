@@ -7,7 +7,7 @@
     "test": "node src/test.js",
     "start": "node src/server.js",
     "server": "nodemon src/server.js",
-    "coverage": "node ./node_modules/.bin/istanbul cover public/test.js"
+    "coverage": "node ./node_modules/.bin/istanbul cover test/*"
   },
   "repository": {
     "type": "git",

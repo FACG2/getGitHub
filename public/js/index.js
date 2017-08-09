@@ -3,29 +3,30 @@
 })();
 
 function dom() {
-  var searchForm = document.getElementById('searchForm');
-  if (searchForm) {
-    searchForm.addEventListener('submit', function(event){
-      event.preventDefault();
-      var userName = event.target.firstElementChild.value;
-      apiReq(userName , function(data){
-        document.querySelector('.avatar img').setAttribute("src", data.avatar_url);
-        document.querySelector('.names h1').textContent = data.name;
-        document.querySelector('.names h6').textContent = data.login;
-        document.querySelector('#company').textContent = data.company;
-        document.querySelector('#location').textContent = data.location;
-        document.querySelector('#followersNumber span').textContent = data.followers;
-        document.querySelector('#followingNumber span').textContent = data.following;
-        document.querySelector('.listRepos').innerHTML = myRepos(data.repos);
-      });
-	  });
+  if (typeof document != 'undefined') {
+    var searchForm = document.getElementById('searchForm');
+    if (searchForm) {
+      searchForm.addEventListener('submit', function(event){
+        event.preventDefault();
+        var userName = event.target.firstElementChild.value;
+        apiReq(userName , function(data){
+          document.querySelector('.avatar img').setAttribute("src", data.avatar_url);
+          document.querySelector('.names h1').textContent = data.name;
+          document.querySelector('.names h6').textContent = data.login;
+          document.querySelector('#company').textContent = data.company;
+          document.querySelector('#location').textContent = data.location;
+          document.querySelector('#followersNumber span').textContent = data.followers;
+          document.querySelector('#followingNumber span').textContent = data.following;
+          document.querySelector('.listRepos').innerHTML = myRepos(data.repos);
+        });
+  	  });
+    }
   }
 }
 
 // Generate repos html as string
 function myRepos(reposArray) {
   //return string with html needed to display repos
-  console.log(reposArray);
     var result = '';
     reposArray.forEach(function(repo) {
       result += '<div class="repoData">'+
@@ -42,11 +43,13 @@ function apiReq(userName , callback) {
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
               var myJSONRemote = JSON.parse(this.responseText);
-              console.log(myJSONRemote);
               callback(myJSONRemote);
         }
       }
         xhttp.open("POST", "/search", true);
         xhttp.send(userName);
 
+}
+if (typeof module != 'undefined' ) {
+  module.exports = myRepos;
 }
