@@ -1,0 +1,36 @@
+var searchForm = document.getElementById('main');
+
+    if (searchForm) {
+    searchForm.addEventListener('submit', function(event){
+      event.preventDefault();
+      var actorName = event.target.firstElementChild.value;
+      mainContent.innerHTML = '<p id="actorNotFount">'+ actorName +' Not Found ! , Are you sure you using the right spilling :3</p>'+
+                              '<br/><p></p>';
+      setTimeout(function(){
+          getActor(actorName, function(actor) {
+            if (actor.status == 1) {
+              mainContent.innerHTML = empty();
+              var actorAvatar = document.getElementsByClassName('actorImg')[0];
+              document.getElementsByClassName('actorName')[0].textContent = actorName;
+              actorAvatar.setAttribute("src", actor.profile);
+               document.getElementById('myMovies').innerHTML = addMoviesDOM(actor.films);
+               /*Add gifs*/
+               var myGifsDivs = document.getElementsByClassName("gifs");
+               for (let i = 0; i < myGifsDivs.length; i++) {
+                   getGif( actor.films[i].filmName , function(gifs){
+                     console.log(gifs);
+                     gifs.forEach(function(myGif) {
+                       myGifsDivs[i].innerHTML += '<img src="'+ myGif +'" alt="">';
+
+                     });
+                   });
+              }
+            }else {
+              mainContent.innerHTML = '<p id="actorNotFount">'+ actorName +' Not Found ! , Are you sure you using the right spilling :3</p>'+
+                                      '<br/><p></p>';
+            }
+          });
+          //
+      }, 0);
+    });
+  }
