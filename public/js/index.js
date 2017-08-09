@@ -28,7 +28,7 @@ function dom() {
 function myRepos(reposArray) {
   //return string with html needed to display repos
     var result = '';
-    reposArray.forEach(function(repo) {
+    reposArray.map(function(repo) {
       result += '<div class="repoData">'+
                   '<a class="repoName" href="https://www.github.com/'+repo.name+'" class="repoName" alt="'+repo.name+'" target="_blank">'+repo.name+'</a>'+
                     '<p class="repoDesc">'+repo.desc+'</p>'+
@@ -50,6 +50,8 @@ function apiReq(userName , callback) {
         xhttp.send(userName);
 
 }
+
+
 if (typeof module != 'undefined' ) {
   module.exports = myRepos;
 }
