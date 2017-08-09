@@ -25,12 +25,13 @@ function dom() {
 // Generate repos html as string
 function myRepos(reposArray) {
   //return string with html needed to display repos
+  console.log(reposArray);
     var result = '';
     reposArray.forEach(function(repo) {
       result += '<div class="repoData">'+
-                  '<p>Link : <a herf="https://www.github.com/'+repo.name+'" class="repoName" alt="'+repo.name+'" target="_blank">'+
-                    '<p id="overView">'+repo.desc+'</p>'+
-                    '<p id="repoLang">'+repo.lang+'</p>'+
+                  '<a class="repoName" href="https://www.github.com/'+repo.name+'" class="repoName" alt="'+repo.name+'" target="_blank">'+repo.name+'</a>'+
+                    '<p class="repoDesc">'+repo.desc+'</p>'+
+                    '<p class="repoLang">Language : <span>'+repo.lang+'</span></p>'+
               '</div>';
     });
     return result;
