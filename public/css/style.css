@@ -23,13 +23,17 @@ nav{
 nav form{
   margin: 0 auto;
   display: table;
+  font-size: 0;
 }
 nav input{
   height: 36px;
   box-sizing: border-box;
-  border-radius: 26px;
+  border-radius: 0 26px 26px 0;
   border: 1px solid gray;
   padding: 0 14px;
+}
+#searchForm input:nth-child(1){
+  border-radius: 26px 0 0 26px;
 }
 .main{
   display: flex;
