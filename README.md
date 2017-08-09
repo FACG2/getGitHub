@@ -4,7 +4,7 @@
 >Done by: Samer, Waleed, Mo'ath and Kefah ...
 
 ## What is getGitHub?
-A simple look alike to Github site, which shows information of the developers who are members in Github.
+A simple look alike Github site, which shows information of the developers who are members in Github.
 
 ## What's new from previous projects?
 The new approach of getting information from calling server, connections between frontend and backend of the site.
