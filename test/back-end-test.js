@@ -1,6 +1,6 @@
 const tape = require('tape');
 const shot = require('shot');
-const router = require('./router.js');
+const router = require('../src/router.js');
 
 tape('Home Route Test' , (t) => {
   shot.inject(router , {method: 'get' , url: "/"} , (res) => {
@@ -11,8 +11,8 @@ tape('Home Route Test' , (t) => {
 
 
 tape('Search Route Test' , (t) => {
-  shot.inject(router , {method: 'post' , url: '/search'} , (res) => {
-    t.equal( res.statusCode, 302 , 'should equal 302');
+  shot.inject(router , {method: 'post' , url: '/search' , payload:"samerelaila"} , (res) => {
+    t.equal( res.statusCode, 200 , 'should equal 200');
     t.end();
   });
 });
