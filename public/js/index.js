@@ -18,7 +18,7 @@ function dom() {
         document.querySelector('#followingNumber span').textContent = data.following;
         document.querySelector('.listRepos').innerHTML = myRepos(data.repos);
       });
-	  }
+	  });
   }
 }
 
@@ -32,19 +32,20 @@ function myRepos(reposArray) {
                     '<p id="overView">'+repo.desc+'</p>'+
                     '<p id="repoLang">'+repo.lang+'</p>'+
               '</div>';
-    }
+    });
     return result;
   }
 
-//Return object of only the data needed in dom
 function apiReq(userName , callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200){
-      var data = JSON.parse(this.responseText);
-      callback(data);
-    }
-  }
-  xhr.open('POST',"/search" , true);
-  xhr.send(userName);
+    var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              var myJSONRemote = JSON.parse(this.responseText);
+              console.log(myJSONRemote);
+              callback(myJSONRemote);
+        }
+      }
+        xhttp.open("POST", "/search", true);
+        xhttp.send(userName);
+
 }

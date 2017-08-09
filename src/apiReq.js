@@ -10,7 +10,8 @@ function apiReq(username, cb){
     else {
       let data = JSON.parse(body);
       obj.name = data.name;
-      obj.username = data.login;
+      obj.login = data.login;
+      obj.avatar_url = data.avatar_url;
       obj.company = data.company;
       obj.location = data.location;
       obj.followers = data.followers;
@@ -31,7 +32,7 @@ function getRepos(username , cb){
       else counter = 6;
       let arr = [];
       for(let i= 0 ;i < counter ; ++i)
-        arr.push({fullname: data[i].full_name , description: data[i].description, language: data[i].language});
+        arr.push({fullname: data[i].full_name , desc: data[i].description, lang: data[i].language});
       cb(null , arr);
     }
   });

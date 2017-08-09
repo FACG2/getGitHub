@@ -2,10 +2,8 @@ const handlers = require("./handlers.js");
 
 function router(req, res){
   let url = req.url;
-  if(url == "/"){
-    handlers.handleHome(req, res);
-  }
-  else if(url == "/search"){
+
+  if(url == "/search"){
     handlers.handleSearch(req, res);
   }
   else if(url == '/404'){
