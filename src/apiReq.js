@@ -28,11 +28,11 @@ function getRepos(username , cb){
     else {
       let data = JSON.parse(body);
       let counter = 0;
-      if(data.length <= 6) counter = data.length;
-      else counter = 6;
+      if(data.length <= 12) counter = data.length;
+      else counter = 12;
       let arr = [];
       for(let i= 0 ;i < counter ; ++i)
-        arr.push({fullname: data[i].full_name , desc: data[i].description, lang: data[i].language});
+        arr.push({name: data[i].full_name , desc: data[i].description, lang: data[i].language});
       cb(null , arr);
     }
   });
