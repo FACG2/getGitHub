@@ -15,8 +15,6 @@ function handleSearch(req, res){
   });
   req.on('end' , () => {
     requests.apiReq(content, (err , obj) => {
-      // console.log('err' , err);
-      // console.log('obj' , obj);
       if(err){
         console.log(err, 'ssssError');
         res.writeHead(302 , {'Location': '/404'});
