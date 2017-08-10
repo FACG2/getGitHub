@@ -13,6 +13,7 @@ tape('Home Route Test' , (t) => {
 tape('Search Route Test' , (t) => {
   shot.inject(router , {method: 'post' , url: '/search' , payload:"samerelaila"} , (res) => {
     t.equal( res.statusCode, 200 , 'should equal 200');
+    t.equal(JSON.parse(res.payload).login.toLowerCase() , 'samerelaila' , 'should equal samerelaila');
     t.end();
   });
 });
